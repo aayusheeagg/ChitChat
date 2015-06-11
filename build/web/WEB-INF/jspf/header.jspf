@@ -1,0 +1,30 @@
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@ page pageEncoding="UTF-8" %>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
+    <link href="images/chit.png" rel="icon" type="image/png" />
+    <link href="css/mystyle.css" rel="stylesheet" type="text/css" />
+</head>
+<div id="page">    
+    <table  border="0" align="center" cellpadding="10">
+        <tr>
+            <th width="550px">
+                <img src="images/chit.png" height="180px" width="250px"/>                    
+            </th>
+            <td width="300px" height="200px" style="line-height:25px; font-size:18px; font-weight: bold;">
+                <%
+                    SimpleDateFormat df = new SimpleDateFormat("EEEE, dd MMMM, yyyy");
+                    String date = df.format(new Date());
+                    out.println(date + "&nbsp;&nbsp;<br><br>");
+                %>
+                ONLINE USERS: <font size="5px">${applicationScope["online"]}</font><br><br>
+                TOTAL USERS: <font size="5px">${applicationScope["visitor"]}</font><br>
+            </td>                
+        </tr>   
+        <tr>
+            <td style="float: left;"><img src="images/CB.gif" /></td>
+            <td>&nbsp;</td>
+        </tr>
+    </table>
+</div>
